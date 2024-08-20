@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
-    <link rel="preload" href="./css/style.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preload" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap" rel="stylesheet">
     <link rel="preload" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/normalize.css">
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form__fielset__input-checkbox">
-                    <label class="campo__label f-size" for="contado">Si pago de CONTADO: Tengo Descuento </label> 
+                    <label class="campo__label f-size" for="contado">Si pago de CONTADO: Tengo Descuento. </label> 
                     <input class="input__radio" type="radio" name="radio1" value="contado">
                 </div>
 
@@ -67,7 +67,7 @@ if ($_GET['radio1']=="cuotas")///
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
                 <label class="campo__label" for="">IMPORTE DE CONTADO</label> 
-                <input class="campo__field" type="number" name="OPCION1" autofocus value="" required >
+                <input class="campo__field" min = "0" type="number" name="OPCION1" autofocus value="" required >
             </div>
 
             <div class="form__fielset__input">
@@ -103,12 +103,31 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
             echo "<li>El valor del producto en cuotas $ $calculo </li>";
             echo "<li>Valor de cada cuota en promedio $ $numero2 </li>";
             echo "<li>Cantidad de cuotas $numero3 </li>";
-            echo "<li>El costo financiero total es: ". number_format($cft, 2) . "% </li>";
+
+            echo "<div class='grid'>";
+                echo "<li>El costo financiero total es: ". number_format($cft, 2) . "% </li>";
+
+                echo "<abbr title='El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.
+                    El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-info'></i></abbr> ";
+            echo "</div>";
+
+            echo "<div class='grid'>";
+                echo "<h4>Referencias: </h4>";
+                echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><p class= 'flex'>?</p></abbr> ";
+            echo "</div>";
+
             echo "<br>";
+
+
+            // AGREGAR IF -- SI EL NUMERO DE COSTO FINANCIERO TOTAL ES MAS ALTO QUE LOS NUMEROS DE LA APIS, PINTAR EN ROJO.
+            // AGREGAR IF -- SI EL NUMERO DE COSTO FINANCIERO TOTAL ES MAS BAJO QUE LOS NUMEROS DE LA APIS, PINTAR EN VERDE.
+
+
             CurlBcra(3);
         echo "</ul>";
     echo "</div>";
 }
+
 
 if (isset($_GET['radio1'])) {
 if ($_GET['radio1']=="contado"){
@@ -118,7 +137,7 @@ if ($_GET['radio1']=="contado"){
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
                 <label class="campo__label" for="">Importe Financiado</label> 
-                <input class="campo__field" type="number" name="DATO1"  value="" required>
+                <input class="campo__field" type="number" name="DATO1"  value="" required autofocus>
             </div>
 
             <div class="form__fielset__input">
@@ -135,7 +154,7 @@ if ($_GET['radio1']=="contado"){
                 <input type="submit" name="Subir" value="Calcular">
             </div>
         </fieldset>
-    </from>
+    </form>
 <?php
 }}
 if (isset($_GET['DATO1']) && isset($_GET['DATO2'])){
@@ -153,6 +172,8 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2'])){
             echo "<li>Porcentaje de descuento $descuento % </li>";
             echo "<li>Precio con descuento $ $perciodescuento </li>";
             echo "<br>";
+
+            
             CurlBcra(3);
         echo "</ul>";
     echo "</div>";
@@ -213,6 +234,7 @@ if (isset($_GET['CREDITO']) && isset($_GET['PROMEDIO']) && isset($_GET['CUOTAS']
             echo "<li>Valor de cada couta en promedio $ $numero2</li>";
             echo "<li>Cantidad de cuotas $numero3</li>";
             echo "<li>El costo financiero total es: " . number_format($cft, 2) . "% </li>";
+            echo "<i class='fa-solid fa-circle-info'></i>";
             echo "<br>";
             CurlBcra(3);
         echo "</ul>";
@@ -225,6 +247,8 @@ if (isset($_GET['CREDITO']) && isset($_GET['PROMEDIO']) && isset($_GET['CUOTAS']
 ?>
 
     <script src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/8dd3949086.js" crossorigin="anonymous"></script>
+
 
 </body>
 </html>
