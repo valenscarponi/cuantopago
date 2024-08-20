@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
-    <link rel="preload" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preload" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap" rel="stylesheet">
     <link rel="preload" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/normalize.css">
@@ -33,17 +33,17 @@
             <legend class="form__title">Ingrese datos:</legend>
             <fieldset class="form__fielset">
                 <div class="form__fielset__input-checkbox">
-                    <label class="campo__label f-size" for="coutas">PAGO EN CUOTAS <span>-</span></label> 
+                    <label class="campo__label f-size" for="coutas">Si pago en CUOTAS: Tengo Recargo.</label> 
                     <input class="input__radio" type="radio" name="radio1" value="cuotas">
                 </div>
 
                 <div class="form__fielset__input-checkbox">
-                    <label class="campo__label f-size" for="contado">PAGO DE CONTADO</label> 
+                    <label class="campo__label f-size" for="contado">Si pago de CONTADO: Tengo Descuento </label> 
                     <input class="input__radio" type="radio" name="radio1" value="contado">
                 </div>
 
                 <div class="form__fielset__input-checkbox">
-                    <label class="campo__label f-size" for="credito">OBTENER UN PRÉSTAMO</label> 
+                    <label class="campo__label f-size" for="credito">Obtener un Préstamo</label> 
                     <input class="input__radio" type="radio" name="radio1" value="credito">
                 </div>
                 
@@ -63,11 +63,11 @@ if (isset($_GET['radio1'])) {
 
 if ($_GET['radio1']=="cuotas")///
 {?>
-    <form class="form" id=""  method="get" onchange="scroll(0, 100);">
+    <form class="form" id=""  method="get">
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
                 <label class="campo__label" for="">IMPORTE DE CONTADO</label> 
-                <input class="campo__field" type="number" name="OPCION1"  id="importe" value="" required>
+                <input class="campo__field" type="number" name="OPCION1" autofocus value="" required >
             </div>
 
             <div class="form__fielset__input">
@@ -117,14 +117,20 @@ if ($_GET['radio1']=="contado"){
     <form class="form" id=""  method="get">
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
-                <label class="campo__label" for="">IMPORTE DE CONTADO</label> 
+                <label class="campo__label" for="">Importe Financiado</label> 
                 <input class="campo__field" type="number" name="DATO1"  value="" required>
             </div>
 
             <div class="form__fielset__input">
-                <label class="campo__label" for="">DE DESCUENTO DEL PRODUCTO</label>
+                <label class="campo__label" for="">Porcentaje de Descuento por Pago Contado</label>
                 <input class="campo__field" type="number" name="DATO2" value="" required>
             </div>
+
+            <div class="form__fielset__input">
+                <label class="campo__label" for="">Cantidad de Cuotas</label>
+                <input class="campo__field" type="number" name="DATO3" value="" required>
+            </div>
+
             <div class="form__fielset__input">
                 <input type="submit" name="Subir" value="Calcular">
             </div>
@@ -162,12 +168,12 @@ if ($_GET['radio1']=="credito"){
     <form class="form" id=""  method="get">
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
-                <label class="campo__label" for="">CREDITO PEDIDO</label> 
+                <label class="campo__label" for="">Importe del Préstamo Solicitado</label> 
                 <input class="campo__field" type="number" name="CREDITO"  value="">
             </div>
 
             <div class="form__fielset__input">
-                <label class="campo__label" for="">PROMEDIO COUTA ABONAR </label>
+                <label class="campo__label" for="">CUOTA PROMEDIO ABONAR </label>
                 <input class="campo__field" type="number" name="PROMEDIO" value="" required>
             </div>
 
