@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Calculadora de Costo Financiero Total">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/logo-modified.png" type="image/x-icon">
+    <link rel="preload" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preload" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <title>CuantoPago</title>
+</head>
+
+
+<body>
+
+    <!-- FORMULARIO PRINCIPAL -->
+
+    <main class="container">
+
+        <!-- IMAGEN -->
+        
+        <div class="container__imagen">
+            <img class="logo" src="./img/logo.jpg" alt="Logo">
+        </div>
+
+        <!-- TITULO -->
+
+        <div class="container__presentacion">
+            <div class="container__contenido">
+                <h1 class="container__title no-margin">¿Cuánto Pago?</h1>
+                <p>Calculadora de Costo Financiero Total</p>
+            </div>
+        </div>
+
+        <!-- FORMULARIO DE CHECKBOX -->
+
+        <form class="form__principal" action="" method="get">
+            <legend class="form__title">Ingrese datos:</legend>
+            <fieldset class="form__fielset">
+                <div class="form__fielset__input-checkbox">
+                    <label class="campo__label f-size" for="coutas">Si pago en CUOTAS: Tengo Recargo.</label> 
+                    <input class="input__radio" type="radio" name="radio1" id = "coutas" value="cuotas">
+                </div>
+
+                <div class="form__fielset__input-checkbox">
+                    <label class="campo__label f-size" for="contado">Si pago de CONTADO: Tengo Descuento. </label> 
+                    <input class="input__radio" type="radio" name="radio1" id= "contado" value="contado">
+                </div>
+
+                <div class="form__fielset__input-checkbox">
+                    <label class="campo__label f-size" for="credito">Obtener un Préstamo</label> 
+                    <input class="input__radio" type="radio" name="radio1" id = "credito" value="credito">
+                </div>
+                
+                <div class="form__fielset__button">
+                    <input type="submit" name="" value="Siguiente" >
+                </div>
+            </fieldset>
+        </form>
+    </main>
+
+
+<?php
+include 'CurlApi.php';
+// CALCULO DE COMPRA DE PRODUCTO
+if (isset($_GET['radio1'])) {
+
+if ($_GET['radio1']=="cuotas")///
+{?>
+
+    <!-- PAGO EN COUTAS -->
+
+    <form class="form" id=""  method="get">
+        <legend>Pago en Cuotas</legend>
+        <fieldset class="form__fielset">
+            <div class="form__fielset__input">
+                <label class="campo__label" for="OPCION1">Importe de Contado</label> 
+                <input class="campo__field" min = "0" type="number" name="OPCION1" id="OPCION1" autofocus value="" required >
+            </div>
+
+            <div class="form__fielset__input">
+                <label class="campo__label" for="OPCION2">Promedio Cuota Abonar </label>
+                <input class="campo__field" min = "0" type="number" name="OPCION2" id="OPCION2" value="" required>
+            </div>
+
+            <div class="form__fielset__input">
+                <label class="campo__label" for="OPCION3">Cantidad de Cuotas</label>
+                <input class="campo__field" min = "0" type="number" name="OPCION3" id="OPCION3" value="" required>
+            </div>
+            <div class="form__fielset__button">
+                <input type="submit" name="Subir" value="Calcular">
+            </div>
+        </fieldset>
+    </form>
+
+<?php
+}}
+if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3'])){
+    $numero1 = $_GET['OPCION1'];
+    $numero2 = $_GET['OPCION2'];
+    $numero3 = $_GET['OPCION3'];
+
+    // VALOR DEL PRODUCTO EN COUTAS
+    $calculo = $numero2*$numero3;
+
+    // CALCULO DEL CFT
+    $valorPresente = $_GET['OPCION1']; // Valor presente del préstamo
+    $cuota = $_GET['OPCION2']; // Cuota periódica
+    $numeroPeriodos = $_GET['OPCION3']; // Número total de períodos (por ejemplo, 24 meses)
+     try {
+        $tasa = calcularTasaInteres($valorPresente, $cuota, $numeroPeriodos);
+        $formula = pow(1+$tasa,12);
+        $formula1 =$formula -1;
+        $formula2 = $formula1 * 100;
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+    }
+   
+   // LO QUE MUESTRA POR PANTALLA
+    echo "<div class = 'resultado'>";
+        echo "<h3>Resultado: </h3>";
+
+        echo "<ul>";
+            echo "<li>El valor del producto $numero1 </li>";
+            echo "<li>El valor del producto en cuotas $calculo </li>";
+            echo "<li>Valor de cada cuota en promedio $numero2 </li>";
+            echo "<li>Cantidad de coutas $numero3 </li>";
+
+            echo "<div class = 'grid'>";
+                echo "El costo financiero total es: ". number_format($formula2, 2) . "%";
+
+                echo "<abbr title='El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.
+                    El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr> ";
+            echo "</div>";
+
+            echo "<div class = 'grid2'>";
+                echo "<h4>Referencias</h4>";
+                CurlBcra(3);
+                echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
+            echo "</div>";
+        echo "</ul>";
+   echo "</div>";
+
+
+}
+
+
+//CALCULO DE COMPRA POR CONTADO
+
+if (isset($_GET['radio1'])) {
+if ($_GET['radio1']=="contado"){
+
+?>
+    <!-- PAGO EN CONTADO -->
+
+    <form class="form" id=""  method="get">
+        <legend>Pago en Contado</legend>
+        <fieldset class="form__fielset">
+            <div class="form__fielset__input">
+                <label class="campo__label" for="DATO1">Importe Financiado</label> 
+                <input class="campo__field" min = "0" type="number" name="DATO1"  id="DATO1" value="" required autofocus>
+            </div>
+
+            <div class="form__fielset__input">
+                <label class="campo__label" for="DATO2">Porcentaje de Descuento por Pago Contado</label>
+                <input class="campo__field" min = "0" type="number" name="DATO2" id="DATO2" value="" required>
+            </div>
+
+            <div class="form__fielset__input">
+                <label class="campo__label" for="DATO3">Cantidad de Cuotas</label>
+                <input class="campo__field" min = "0" type="number" name="DATO3" id="DATO3" value="" required>
+            </div>
+
+            <div class="form__fielset__button">
+                <input type="submit" name="Subir" value="Calcular">
+            </div>
+        </fieldset>
+    </form>
+<?php
+}}
+if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
+
+    $precio = $_GET['DATO1'];
+    $descuento = $_GET['DATO2'];
+    $cuotas = $_GET['DATO3'];
+
+
+    //CALCULO DE DESCUENTO
+
+    $calculodesc = $precio * (1-$descuento/100);
+    
+    $importecouta = $precio/$cuotas;
+
+
+    // CALCULO DEL CFT
+    $valorPresente = $calculodesc; // Valor presente del préstamo
+    $cuota1 = $importecouta; // Cuota periódica
+    $numeroPeriodos = $cuotas; // Número total de períodos (por ejemplo, 24 meses)
+     try {
+        $tasa = calcularTasaInteres($valorPresente, $cuota1, $numeroPeriodos);
+        $formula = pow(1+$tasa,12);
+        $formula1 =$formula -1;
+        $formula2 = $formula1 * 100;
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+    } 
+
+    //LO QUE MUESTRA POR PANTALLA
+    echo "<div class = 'resultado'>";
+        echo "<h3>Resultado: </h3>";
+        echo "<ul>";
+            echo "<li>Precio original $precio </li> ";
+            echo "<li>Porcentaje de descuento $descuento </li>";
+            echo "<li>Precio con descuento $calculodesc </li>";
+            echo "<li>precio de cada couta $importecouta </li>"; 
+
+            echo "<div class= 'grid'>";
+                echo "<li>El costo financiero total es: ". number_format($formula2, 2) . "% </li>";
+                CurlBcra(3);
+                echo "<abbr title='El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.
+                El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr> ";
+            echo "</div>";
+
+            
+            echo "<div class= 'grid2'>"; 
+                echo "<h4>Referencias:</h4>";
+                CurlBcra(3);
+                echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
+
+            echo "</div>";
+        echo "</ul>";
+    echo "</div>";
+}
+
+
+
+
+
+// CALCULO DE CREDITO
+
+if (isset($_GET['radio1'])) {   
+if ($_GET['radio1']=="credito"){
+?>
+    <!-- OBTENER UN PRESTAMO -->
+
+    <form class="form" id=""  method="get">
+        <legend>Obtener un Préstamo</legend>
+        <fieldset class="form__fielset">
+            <div class="form__fielset__input">
+                <label class="campo__label" for="CREDITO">Importe del Préstamo Solicitado</label> 
+                <input class="campo__field" min = "0" type="number" name="CREDITO" value="">
+            </div>
+
+            <div class="form__fielset__input">
+                <label class="campo__label" for="PROMEDIO">Cuota Promedio Abonar </label>
+                <input class="campo__field" min = "0" type="number" name="PROMEDIO" value="" required>
+            </div>
+
+            <div class="form__fielset__input">
+                <label class="campo__label" for="COUTAS">Cantidad de Cuotas</label>
+                <input class="campo__field" min = "0" type="number" name="CUOTAS" value="" required>
+            </div>
+            <div class="form__fielset__button">
+                <input type="submit" name="Subir" value="Calcular">
+            </div>
+        </fieldset>
+    </form>
+<?php
+}}
+
+
+
+
+if (isset($_GET['CREDITO']) && isset($_GET['PROMEDIO']) && isset($_GET['CUOTAS'])){
+    $numero1 = $_GET['CREDITO'];
+    $numero2 = $_GET['PROMEDIO'];
+    $numero3 = $_GET['CUOTAS'];
+
+
+    $calculo = $numero2 * $numero3;
+    
+    
+     // CALCULO DEL CFT
+    $valorPresente = $_GET['CREDITO']; // Valor presente del préstamo
+    $cuota = $_GET['PROMEDIO']; // Cuota periódica
+    $numeroPeriodos = $_GET['CUOTAS']; // Número total de períodos (por ejemplo, 24 meses)
+ 
+ 
+ 
+try {
+     // Llamar a la función para calcular la tasa de interés
+     $tasa = calcularTasaInteres($valorPresente, $cuota, $numeroPeriodos);
+     $formula = pow(1+$tasa,12);
+     $formula1 =$formula -1;
+     $formula2 = $formula1 * 100;
+    } catch (Exception $e) {
+     echo "Error: " . $e->getMessage();
+    }
+    
+    // LO QUE MUESTRA POR PANTALLA
+    
+    echo "<div class= 'resultado'>";
+
+        echo "<h3>Resultado</h3>";
+
+        echo "<ul>";
+            echo "<li>Monto del credito pedido $numero1 </li>";
+            echo "<li>Valor del monto a devolver $calculo </li>";
+            echo "<li>Valor de cada couta en promedio $numero2 </li>";
+            echo "<li>Cantidad de coutas $numero3 </li>";
+
+            echo "<div class= 'grid'>"; 
+                echo "<li>El costo financiero total es: " . number_format($formula2, 2) . "% </li>";
+                echo "<abbr title='El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.
+                El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr>";
+            echo "</div>";
+
+            echo "<div class= 'grid2'>"; 
+                echo "<h4>Referencias:</h4>";
+                CurlBcra(3);
+                echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
+
+            echo "</div>";
+
+        echo "</ul>";
+    echo "</div>";
+
+}
+
+
+//FUNCION DE CALCULO DE INTERES
+function calcularTasaInteres($valorPresente, $cuota, $numeroPeriodos) {
+    if ($numeroPeriodos <= 2) {
+        if ($numeroPeriodos == 1) {
+            $tasa = ($cuota - $valorPresente) / $valorPresente;
+            return $tasa;
+        } elseif ($numeroPeriodos == 2) {
+            $tasa = 0.01; // Tasa inicial (1%)
+            $tolerancia = 0.00001; // Precisión del cálculo
+            $maxIteraciones = 1000; // Número máximo de iteraciones
+
+            for ($iter = 0; $iter < $maxIteraciones; $iter++) {
+                $tasaDecimal = $tasa;
+                
+                // Calcular el valor presente usando la tasa actual
+                $factor1 = 1 / (1 + $tasaDecimal);
+                $factor2 = $factor1 * $factor1;
+                $valorCalculado = $cuota * ($factor1 + $factor2);
+
+                // Calcular la diferencia entre el valor calculado y el valor presente
+                $diferencia = $valorCalculado - $valorPresente;
+
+                // Calcular la derivada para el método de Newton-Raphson
+                $derivada = -$cuota * ($factor1 + 2 * $factor2) / (1 + $tasaDecimal);
+
+                // Ajustar la tasa usando el método de Newton-Raphson
+                if ($derivada == 0) {
+                    throw new DivisionByZeroError("La derivada es cero, no se puede continuar.");
+                }
+
+                $tasaNueva = $tasaDecimal - ($diferencia / $derivada);
+
+                // Verificar la tolerancia
+                if (abs($tasaNueva - $tasaDecimal) < $tolerancia) {
+                    return $tasaNueva; // Devolver la tasa en formato decimal
+                }
+
+                $tasa = $tasaNueva;
+            }
+
+            throw new Exception("No se pudo encontrar la tasa de interés con la precisión deseada.");
+        }
+    }
+
+    // Método de Newton-Raphson para más de 2 cuotas
+    $tasa = 0.01; // Tasa inicial (1%)
+    $tolerancia = 0.00001; // Precisión del cálculo
+    $maxIteraciones = 1000; // Número máximo de iteraciones
+
+    for ($iter = 0; $iter < $maxIteraciones; $iter++) {
+        $tasaDecimal = $tasa;
+        
+        // Calcular el valor presente usando la tasa actual
+        $factor = pow(1 + $tasaDecimal, -$numeroPeriodos);
+        $valorCalculado = ($cuota * (1 - $factor)) / $tasaDecimal;
+
+        // Calcular la diferencia entre el valor calculado y el valor presente
+        $diferencia = $valorCalculado - $valorPresente;
+
+        // Calcular la derivada para el método de Newton-Raphson
+        $factorDerivada = pow(1 + $tasaDecimal, -$numeroPeriodos);
+        $derivada = ($cuota * $factorDerivada * $numeroPeriodos) / $tasaDecimal - ($cuota * (1 - $factorDerivada)) / pow($tasaDecimal, 2);
+
+        // Ajustar la tasa usando el método de Newton-Raphson
+        if ($derivada == 0) {
+            throw new DivisionByZeroError("La derivada es cero, no se puede continuar.");
+        }
+
+        $tasaNueva = $tasaDecimal - ($diferencia / $derivada);
+
+        // Verificar la tolerancia
+        if (abs($tasaNueva - $tasaDecimal) < $tolerancia) {
+            return $tasaNueva; // Devolver la tasa en formato decimal
+        }
+
+        $tasa = $tasaNueva;
+    }
+
+    throw new Exception("No se pudo encontrar la tasa de interés con la precisión deseada.");
+}
+?>
+
+    <footer class="footer">
+        <p>© Copyright | Todos los derechos reservados 2024</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/8dd3949086.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html

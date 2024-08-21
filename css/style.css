@@ -79,10 +79,10 @@ li{
 /* FORMULARIO */
 
 .container{
-    height: 50rem;
+    height: 47.5rem;
     margin-top: 10rem;
     margin-bottom: 2rem;
-    width: 60%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,7 +112,9 @@ li{
 } 
 
 .logo{
-    margin-top: -40rem;
+    width: 10rem;
+    border-radius: 50%;
+    margin-top: -35rem;
     border: .5rem solid var(--primarioOscuro);
 }
 
@@ -135,11 +137,6 @@ li{
 }
 
 
-.logo{
-    width: 10rem;
-    border-radius: 50%;
-}
-
 .form__principal{
     display: flex;
     flex-direction: column;
@@ -156,8 +153,10 @@ li{
     justify-content: center;
     align-items: center;
     background-color: var(--primarioOscuro);
-    padding: 2rem;
+    padding: 2rem 2rem 3.5rem 2rem;
     width: 75%;
+    height: 30rem;
+
     margin: 2rem;
 
    
@@ -174,7 +173,7 @@ li{
 
 @media (min-width: 768px) {
     .form{
-        width: 60%;
+        width: 50%;
     }
 }
 
@@ -238,13 +237,12 @@ label{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0;
+    margin: 4rem 0 0 0;
 }
 
 
 input[type = 'submit']{
     border: 1px solid var(--border);
-    margin-top: 1rem;
     cursor: pointer;
     background-color: var(--Secundario);
     padding: .75rem 0;
@@ -272,7 +270,6 @@ input[type = 'submit']:hover{
     input[type = 'submit']{
         width: 20rem;
         height: 4rem;
-
     }
 }
 

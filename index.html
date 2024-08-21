@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/logo-modified.png" type="image/x-icon">
-    <link rel="preload" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preload" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -44,17 +44,17 @@
             <fieldset class="form__fielset">
                 <div class="form__fielset__input-checkbox">
                     <label class="campo__label f-size" for="coutas">Si pago en CUOTAS: Tengo Recargo.</label> 
-                    <input class="input__radio" type="radio" name="radio1" value="cuotas">
+                    <input class="input__radio" type="radio" name="radio1" id = "coutas" value="cuotas">
                 </div>
 
                 <div class="form__fielset__input-checkbox">
                     <label class="campo__label f-size" for="contado">Si pago de CONTADO: Tengo Descuento. </label> 
-                    <input class="input__radio" type="radio" name="radio1" value="contado">
+                    <input class="input__radio" type="radio" name="radio1" id= "contado" value="contado">
                 </div>
 
                 <div class="form__fielset__input-checkbox">
                     <label class="campo__label f-size" for="credito">Obtener un Préstamo</label> 
-                    <input class="input__radio" type="radio" name="radio1" value="credito">
+                    <input class="input__radio" type="radio" name="radio1" id = "credito" value="credito">
                 </div>
                 
                 <div class="form__fielset__button">
@@ -72,20 +72,20 @@
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
                 <label class="campo__label" for="OPCION1">Importe de Contado</label> 
-                <input class="campo__field" min = "0" type="number" name="OPCION1" autofocus value="" required >
+                <input class="campo__field" min = "0" type="number" name="OPCION1" id="OPCION1" autofocus value="" required >
             </div>
 
             <div class="form__fielset__input">
                 <label class="campo__label" for="OPCION2">Promedio Cuota Abonar </label>
-                <input class="campo__field" min = "0" type="number" name="OPCION2" value="" required>
+                <input class="campo__field" min = "0" type="number" name="OPCION2" id="OPCION2" value="" required>
             </div>
 
             <div class="form__fielset__input">
                 <label class="campo__label" for="OPCION3">Cantidad de Cuotas</label>
-                <input class="campo__field" min = "0" type="number" name="OPCION3" value="" required>
+                <input class="campo__field" min = "0" type="number" name="OPCION3" id="OPCION3" value="" required>
             </div>
             <div class="form__fielset__button">
-                <input class="padding" type="submit" name="Subir" value="Calcular">
+                <input type="submit" name="Subir" value="Calcular">
             </div>
         </fieldset>
     </form>
@@ -125,17 +125,17 @@
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
                 <label class="campo__label" for="DATO1">Importe Financiado</label> 
-                <input class="campo__field" min = "0" type="number" name="DATO1"  value="" required autofocus>
+                <input class="campo__field" min = "0" type="number" name="DATO1"  id="DATO1" value="" required autofocus>
             </div>
 
             <div class="form__fielset__input">
                 <label class="campo__label" for="DATO2">Porcentaje de Descuento por Pago Contado</label>
-                <input class="campo__field" min = "0" type="number" name="DATO2" value="" required>
+                <input class="campo__field" min = "0" type="number" name="DATO2" id="DATO2" value="" required>
             </div>
 
             <div class="form__fielset__input">
                 <label class="campo__label" for="DATO3">Cantidad de Cuotas</label>
-                <input class="campo__field" min = "0" type="number" name="DATO3" value="" required>
+                <input class="campo__field" min = "0" type="number" name="DATO3" id="DATO3" value="" required>
             </div>
 
             <div class="form__fielset__button">
@@ -163,7 +163,7 @@
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
                 <label class="campo__label" for="CREDITO">Importe del Préstamo Solicitado</label> 
-                <input class="campo__field" min = "0" type="number" name="CREDITO"  value="">
+                <input class="campo__field" min = "0" type="number" name="CREDITO" value="">
             </div>
 
             <div class="form__fielset__input">
@@ -207,9 +207,11 @@
 
     </div>
 
+    <!-- FOOTER -->
+
 
     <footer class="footer">
-        <p>© Copyright | 2024</p>
+        <p>© Copyright | Todos los derechos reservados 2024</p>
     </footer>
 
     <script src="./js/script.js"></script>
