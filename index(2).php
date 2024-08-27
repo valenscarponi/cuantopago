@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/logo-modified.png" type="image/x-icon">
-    <link rel="preload" href="./css/style.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preload" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -76,17 +76,23 @@ if ($_GET['radio1']=="cuotas")///
 
     <!-- PAGO EN COUTAS -->
 
-    <form class="form" id=""  method="get" onsubmit="return validarDatos()">
+    <form class="form" id="form1"  method="get" onsubmit="return validarDatos()">
         <legend>Si pago en Cuotas: Tengo Recargo.</legend>
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
                 <label class="campo__label" for="OPCION1">Importe de Contado</label> 
-                <input class="campo__field" min = "0" type="number" name="OPCION1" id="OPCION1" autofocus value="" required >
+                <div class="input">
+                    <p class="signo">$</p>
+                    <input class="campo__field" min = "0" type="number" name="OPCION1" id="OPCION1" autofocus value="" required >
+                </div>
             </div>
 
             <div class="form__fielset__input">
                 <label class="campo__label" for="OPCION2">Cuota Promedio a Abonar</label>
-                <input class="campo__field" min = "0" type="number" name="OPCION2" id="OPCION2" value="" required>
+                <div class="input">
+                    <p class="signo">$</p>
+                    <input class="campo__field" min = "0" type="number" name="OPCION2" id="OPCION2" value="" required>
+                </div>
             </div>
 
             <div class="form__fielset__input">
@@ -131,22 +137,20 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
             echo "<li>Importe Total a Abonar en Coutas $ ". number_format($calculo) ."</li>";
             // echo "<li>Valor de cada cuota en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
-
-            echo "<div class = 'grid'>";
-                echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";
-                echo "<p class = 'font-s'>El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.</p>";
-                echo "<p class = 'font-s'>El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero</p>";
-                // echo "<abbr title='El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.
-                //     El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr> ";
-            echo "</div>";
-
-            echo "<div class = 'grid2'>";
-                echo "<h4>Referencias</h4>";
-                CurlBcra(3);
-                // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
-                echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
-            echo "</div>";
+            echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";
         echo "</ul>";
+
+        echo "<p class = 'font-s'>El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.</p>";
+        echo "<p class = 'font-s'>El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero</p>";
+        // echo "<abbr title='El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.
+        //     El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr> ";
+
+
+        echo "<h4>Referencias</h4>";
+        CurlBcra(3);
+        // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
+        echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
+
    echo "</div>";
 
 
@@ -161,17 +165,24 @@ if ($_GET['radio1']=="contado"){
 ?>
     <!-- PAGO EN CONTADO -->
 
-    <form class="form" id=""  method="get">
+    <form class="form" id="form2"  method="get">
         <legend>Pago en Contado</legend>
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
                 <label class="campo__label" for="DATO1">Importe Financiado</label> 
-                <input class="campo__field" min = "0" type="number" name="DATO1"  id="DATO1" value="" required autofocus>
+                
+                <div class="input">
+                    <p class="signo">$</p>
+                    <input class="campo__field" min = "0" type="number" name="DATO1"  id="DATO1" value="" required autofocus>
+                </div>
             </div>
 
             <div class="form__fielset__input">
                 <label class="campo__label" for="DATO2">Porcentaje de Descuento por Pago Contado</label>
-                <input class="campo__field" min = "0" type="number" name="DATO2" id="DATO2" value="" required>
+                <div class="input">
+                    <p class="signo">%</p>
+                    <input class="campo__field" min = "0" type="number" name="DATO2" id="DATO2" value="" required>
+                </div>
             </div>
 
             <div class="form__fielset__input">
@@ -220,21 +231,20 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
             echo "<li>Importe a Abonar de Contado $ ". number_format($calculodesc) . "</li>";
             echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($precio) ."</li> ";
             echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";
-
-            echo "<div class = 'grid'>";
-                echo "<p class = 'font-s'>El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.</p>";
-                echo "<p class = 'font-s'>El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero</p>";
-                // echo "<abbr title='El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.
-                //     El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr> ";
-            echo "</div>";
-
-            echo "<div class = 'grid2'>";
-                echo "<h4>Referencias</h4>";
-                CurlBcra(3);
-                // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
-                echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
-            echo "</div>";
         echo "</ul>";
+
+
+        echo "<p class = 'font-s'>El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.</p>";
+        echo "<p class = 'font-s'>El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero</p>";
+        // echo "<abbr title='El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.
+        //     El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr> ";
+
+
+        echo "<h4>Referencias</h4>";
+        CurlBcra(3);
+        // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
+        echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
+
     echo "</div>";
 }
 
@@ -249,17 +259,23 @@ if ($_GET['radio1']=="credito"){
 ?>
     <!-- OBTENER UN PRESTAMO -->
 
-    <form class="form" id=""  method="get" onsubmit="return validarDatos2()">
+    <form class="form" id="form3"  method="get" onsubmit="return validarDatos2()">
         <legend>Obtener un Préstamo</legend>
         <fieldset class="form__fielset">
             <div class="form__fielset__input">
                 <label class="campo__label" for="CREDITO">Importe del Préstamo Solicitado</label> 
-                <input class="campo__field" min = "0" type="number" name="CREDITO" id= "CREDITO" value="">
+                <div class="input">
+                    <p class="signo">$</p>
+                    <input class="campo__field" min = "0" type="number" name="CREDITO" id= "CREDITO" value="" required autofocus>
+                </div>
             </div>
 
             <div class="form__fielset__input">
                 <label class="campo__label" for="PROMEDIO">Cuota Promedio Abonar </label>
-                <input class="campo__field" min = "0" type="number" name="PROMEDIO" id = "PROMEDIO" value="" required>
+                <div class="input">
+                    <p class="signo">$</p>
+                    <input class="campo__field" min = "0" type="number" name="PROMEDIO" id = "PROMEDIO" value="" required>
+                </div>
             </div>
 
             <div class="form__fielset__input">
@@ -310,27 +326,32 @@ try {
         echo "<h3>Datos de la Operación.</h3>";
 
         echo "<ul>";
-            echo "<li>Importe Préstamo Solicitado". number_format($numero1) ."</li>";
-            echo "<li>Importe Total a Abonar en Cuotas". number_format($calculo) ."</li>";
+            echo "<li>Importe Préstamo Solicitado $". number_format($numero1) ."</li>";
+            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($calculo) ."</li>";
             // echo "<li>Valor de cada couta en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
 
-            echo "<div class = 'grid'>";
-                echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";
-                echo "<p class = 'font-s'>El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.</p>";
-                echo "<p class = 'font-s'>El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero</p>";
-                // echo "<abbr title='El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.
-                //     El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr> ";
-            echo "</div>";
+            if ($numero1 > $formula2){
+                echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='rojo'>". number_format($formula2, 2) ."</span> % </li>";
+            } else{
+                echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";    
+            }
 
-            echo "<div class = 'grid2'>";
-                echo "<h4>Referencias</h4>";
-                CurlBcra(3);
-                // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
-                echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
-            echo "</div>";
+        echo "</ul>";    
+        echo "<p class = 'font-s'>El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.</p>";
+        echo "<p class = 'font-s'>El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero</p>";
+        // echo "<abbr title='El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.
+        //     El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr> ";
+    
 
-        echo "</ul>";
+    
+        echo "<h4>Referencias</h4>";
+        CurlBcra(3);
+        // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
+        echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
+    
+
+        
     echo "</div>";
 
 }

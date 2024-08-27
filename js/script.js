@@ -1,32 +1,26 @@
-
 function validarDatos(){
-    var contado = document.getElementById('OPCION1').value || 0;
-    var cuotas = document.getElementById('OPCION2').value || 0;
+    var contado = parseFloat(document.getElementById('OPCION1').value) || 0;
+    var cuotas = parseFloat(document.getElementById('OPCION2').value) || 0;
 
     if (contado >= cuotas){
-        true;
+        return true;
     } else{
         alert ('Valor de las Cuotas Incorrecto');
-        false;
+        return false;
     }
 
 }
 
 
 function validarDatos2(){
-    var credito = document.getElementById('CREDITO').value || 0;
-    var cuotas2 = document.getElementById('PROMEDIO').value || 0;
+    var credito = parseFloat(document.getElementById('CREDITO').value) || 0;
+    var cuotas2 = parseFloat(document.getElementById('PROMEDIO').value) || 0;
 
-    if (cuotas2 <= credito){
-        alert ('Valor de las Cuotas Incorrecto');
-        false;
+    if (cuotas2 >= credito){
+        return true;
     } else{
-        true;
+        alert ('Valor de las Cuotas Incorrecto');
+        return false;
     }
 
 }
-
-
-// function coloresResultado{
-    
-// }
