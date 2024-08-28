@@ -1,8 +1,15 @@
+<head>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
 <?php
+
+
 function CurlBcra(float $lado){
 
 // URL de la API
 $url = 'https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables';
+include "./index2.php";
+
 
 // Inicializar cURL
 $ch = curl_init();
@@ -40,9 +47,17 @@ if (curl_errno($ch)) {
                         }
                          if ($proceso == 1) {
                              if ( $innerKey == 'valor'){
-                                 echo "Inflación Esperada próx. 12 meses : $innerValue\n";
-                                 echo "<br>";
-                                 $proceso = 0;
+
+                                // AGREGUÉ ESTO
+                                if ($innerValue > $formula2 ){
+                                    echo "<li>Inflación Esperada próx. 12 meses : "."<span class='rojo'>".$innerValue."</span> %</li>";
+                                }else{
+                                    echo "<li>Inflación Esperada próx. 12 meses : "."<span class='verde'>".$innerValue."</span> %</li>";
+                                    
+                                }
+                                //  echo "Inflación Esperada próx. 12 meses : $innerValue\n";
+                                //  echo "<br>";
+                                $proceso = 0;
                              }
                         }
 
@@ -51,8 +66,16 @@ if (curl_errno($ch)) {
                         }
                          if ($proceso == 2) {
                              if ( $innerKey == 'valor'){
-                                 echo "Tasa Efectiva Anual Plazo Fijo: $innerValue\n";
-                                 $proceso = 0;
+
+                                // AGREGUÉ ESTO
+                                if ($innerValue > $formula2 ){
+                                    echo "<li>Tasa Efectiva Anual Plazo Fijo: "."<span class='rojo'>".$innerValue."</span> %</li>";
+                                }else{
+                                    echo "<li>Tasa Efectiva Anual Plazo Fijo: "."<span class='verde'>".$innerValue."</span> %</li>";
+                                    
+                                }
+                                //  echo "Tasa Efectiva Anual Plazo Fijo: $innerValue\n";
+                                $proceso = 0;
                              }
                         }
                     }

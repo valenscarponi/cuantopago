@@ -137,7 +137,7 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
             echo "<li>Importe Total a Abonar en Coutas $ ". number_format($calculo) ."</li>";
             // echo "<li>Valor de cada cuota en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
-            echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";
+            echo "<li>CFT (Costo Financiero Total) Anual:". number_format($formula2, 2) ." % </li>";
         echo "</ul>";
 
         echo "<p class = 'font-s'>El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.</p>";
@@ -230,7 +230,7 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
         echo "<ul>";
             echo "<li>Importe a Abonar de Contado $ ". number_format($calculodesc) . "</li>";
             echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($precio) ."</li> ";
-            echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";
+            echo "<li>CFT (Costo Financiero Total) Anual:". number_format($formula2 , 2)." % </li>";
         echo "</ul>";
 
 
@@ -331,11 +331,11 @@ try {
             // echo "<li>Valor de cada couta en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
 
-            if ($numero1 > $formula2){
-                echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='rojo'>". number_format($formula2, 2) ."</span> % </li>";
-            } else{
-                echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";    
-            }
+            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2, 2) ." % </li>";
+            // if ($numero1 > $formula2){
+            // } else{
+            //     echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";    
+            // }
 
         echo "</ul>";    
         echo "<p class = 'font-s'>El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.</p>";
@@ -444,7 +444,6 @@ function calcularTasaInteres($valorPresente, $cuota, $numeroPeriodos) {
     </footer>
 
     <script src="./js/script.js"></script>
-    <script src="https://kit.fontawesome.com/8dd3949086.js" crossorigin="anonymous"></script>
 
 
 </body>

@@ -1,6 +1,10 @@
+<head>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
 <?php
 // URL de la API
 $url = 'https://api.bcra.gob.ar/estadisticas/v2.0/principalesvariables';
+include "./index%282%29.php";
 
 // Realizar la solicitud GET
 $response = file_get_contents($url);
@@ -39,23 +43,29 @@ if ($response !== FALSE) {
                         if ( $innerKey == 'idVariable' && $innerValue == 29){
                             $proceso = 1;
                         }
-                         if ($proceso == 1) {
-                             if ( $innerKey == 'valor'){
-                                 echo "Inflación Esperada próx. 12 meses : $innerValue %\n";
-                                 echo "<br>";
-                                 $proceso = 0;
-                             }
+                        if ($proceso == 1) {
+                            if ( $innerKey == 'valor'){
+                                echo "Inflación Esperada próx. 12 meses : $innerValue\n";
+                                $proceso = 0;
+                            }
+
+
                         }
 
                         if ( $innerKey == 'idVariable' && $innerValue == 35){
                             $proceso = 2;
                         }
                          if ($proceso == 2) {
-                             if ( $innerKey == 'valor'){
-                                 echo "Tasa Efectiva Anual Plazo Fijo: $innerValue %\n";
-                                 $proceso = 0;
-                             }
+                            if ( $innerKey == 'valor'){  
+                                echo "Tasa Efectiva Anual Plazo Fijo: $innerValue %\n";
+                                $proceso = 0;
+                            }
+                             
+
                         }
+                        
+
+                        
                     }
                 }
             } else {
