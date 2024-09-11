@@ -1,25 +1,25 @@
 function sumar() {
-var neto21 = parseFloat(document.getElementById("neto21").value) || 0;
-var neto10_5 = parseFloat(document.getElementById("neto10_5").value) || 0;
-var neto27 = parseFloat(document.getElementById("neto27").value) || 0;
+    var neto21 = parseFloat(document.getElementById("neto21").value) || 0;
+    var neto10_5 = parseFloat(document.getElementById("neto10_5").value) || 0;
+    var neto27 = parseFloat(document.getElementById("neto27").value) || 0;
 
-var exento = parseFloat(document.getElementById("exento").value) || 0;
-var nogravado = parseFloat(document.getElementById("nogravado").value) || 0;
-var impuestos = parseFloat(document.getElementById("impuestos").value) || 0;
-var percepciones = parseFloat(document.getElementById("percepciones").value) || 0;
-var retenciones = parseFloat(document.getElementById("retenciones").value) || 0;
-var gastos = parseFloat(document.getElementById("gastos").value) || 0;
+    var exento = parseFloat(document.getElementById("exento").value) || 0;
+    var nogravado = parseFloat(document.getElementById("nogravado").value) || 0;
+    var impuestos = parseFloat(document.getElementById("impuestos").value) || 0;
+    var percepciones = parseFloat(document.getElementById("percepciones").value) || 0;
+    var retenciones = parseFloat(document.getElementById("retenciones").value) || 0;
+    var gastos = parseFloat(document.getElementById("gastos").value) || 0;
 
-var iva21 = neto21 * 0.21;
-var iva10_5 = neto10_5 * 0.105;
-var iva27 = neto27 * 0.27;
+    var iva21 = neto21 * 0.21;
+    var iva10_5 = neto10_5 * 0.105;
+    var iva27 = neto27 * 0.27;
 
-document.getElementById("iva21").value = iva21.toFixed(2);
-document.getElementById("iva10_5").value = iva10_5.toFixed(2);
-document.getElementById("iva27").value = iva27.toFixed(2);
+    document.getElementById("iva21").value = iva21.toFixed(2);
+    document.getElementById("iva10_5").value = iva10_5.toFixed(2);
+    document.getElementById("iva27").value = iva27.toFixed(2);
 
-var total = neto21 + iva21 + neto10_5 + iva10_5 + neto27 + iva27 + exento + nogravado + impuestos + percepciones + retenciones + gastos;
-document.getElementById("total").value = total.toFixed(2);
+    var total = neto21 + iva21 + neto10_5 + iva10_5 + neto27 + iva27 + exento + nogravado + impuestos + percepciones + retenciones + gastos;
+    document.getElementById("total").value = total.toFixed(2);
 }
 
 function validarTotal () {

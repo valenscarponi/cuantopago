@@ -40,7 +40,7 @@
 
         <!-- FORMULARIO DE CHECKBOX -->
 
-        <form class="form__principal" action="" method="get">
+        <form class="form__principal" id="form-principal" action="" method="get">
             <legend class="form__title">Ingrese datos:</legend>
             <fieldset class="form__fielset">
                 <div class="form__fielset__input-checkbox">
@@ -58,8 +58,9 @@
                     <input class="input__radio" type="radio" name="radio1" id = "credito" value="credito">
                 </div>
                 
-                <div class="form__fielset__button">
-                    <input type="submit" name="" value="Siguiente" >
+                <div class="form__fielset__button-inicio">
+                    <input class = "btn-form" type="submit" name="" value="Siguiente" >
+                    <input class = "btn-form" type="submit" name="" value="Invertir" onclick="enviarFormulario('./finanzas.php')">
                 </div>
             </fieldset>
         </form>
@@ -97,7 +98,11 @@ if ($_GET['radio1']=="cuotas")///
 
             <div class="form__fielset__input">
                 <label class="campo__label" for="OPCION3">Cantidad de Cuotas</label>
-                <input class="campo__field" min = "0" type="number" name="OPCION3" id="OPCION3" value="" required>
+                <div class="input">
+                    <p class="signo">c/c</p>
+                    <input class="campo__field" min = "0" type="number" name="OPCION3" id="OPCION3" value="" required>
+                </div>
+
             </div>
             <div class="form__fielset__button">
                 <input type="submit" name="Subir" value="Calcular" >
@@ -187,7 +192,10 @@ if ($_GET['radio1']=="contado"){
 
             <div class="form__fielset__input">
                 <label class="campo__label" for="DATO3">Cantidad de Cuotas</label>
-                <input class="campo__field" min = "0" type="number" name="DATO3" id="DATO3" value="" required>
+                <div class="input">
+                    <p class="signo">c/c</p>
+                    <input class="campo__field" min = "0" type="number" name="DATO3" id="DATO3" value="" required>
+                </div>
             </div>
 
             <div class="form__fielset__button">
@@ -280,7 +288,10 @@ if ($_GET['radio1']=="credito"){
 
             <div class="form__fielset__input">
                 <label class="campo__label" for="COUTAS">Cantidad de Cuotas</label>
-                <input class="campo__field" min = "0" type="number" name="CUOTAS" id = "CUOTAS" value="" required>
+                <div class="input">
+                    <p class="signo">c/c</p>
+                    <input class="campo__field" min = "0" type="number" name="CUOTAS" id = "CUOTAS" value="" required>
+                </div>
             </div>
             <div class="form__fielset__button">
                 <input type="submit" name="Subir" value="Calcular">
@@ -444,6 +455,7 @@ function calcularTasaInteres($valorPresente, $cuota, $numeroPeriodos) {
     </footer>
 
     <script src="./js/script.js"></script>
+    <script src="./js/validardatos.js"></script>
 
 
 </body>

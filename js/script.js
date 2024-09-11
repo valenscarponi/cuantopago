@@ -9,35 +9,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Guardar la selección en localStorage cuando se selecciona una opción
 
+// PARA INDEX
 document.querySelectorAll('input[name="radio1"]').forEach(input => {
     input.addEventListener('change', function() {
         localStorage.setItem('opcionSeleccionada', this.value);
     });
 });
 
-function validarDatos(){
-    var contado = parseFloat(document.getElementById('OPCION1').value) || 0;
-    var cuotas = parseFloat(document.getElementById('OPCION2').value) || 0;
+// PARA FINANZAS
+document.querySelectorAll('input[name="radio2"]').forEach(input => {
+    input.addEventListener('change', function() {
+        localStorage.setItem('opcionSeleccionada', this.value);
+    });
+});
+// Link 
 
-    if (contado >= cuotas){
-        return true;
-    } else{
-        alert ('Valor de las Cuotas Incorrecto');
-        return false;
-    }
-
+function enviarFormulario(accion){
+    document.getElementById('form-principal').action = accion;
 }
 
+// function red() { 
+//     location.href = "./finanzas.php"; 
+// }
 
-function validarDatos2(){
-    var credito = parseFloat(document.getElementById('CREDITO').value) || 0;
-    var cuotas2 = parseFloat(document.getElementById('PROMEDIO').value) || 0;
-
-    if (cuotas2 >= credito){
-        return true;
-    } else{
-        alert ('Valor de las Cuotas Incorrecto');
-        return false;
-    }
-
-}
