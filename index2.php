@@ -134,7 +134,7 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
     }
    
    // LO QUE MUESTRA POR PANTALLA
-    echo "<div class = 'resultado'>";
+    echo "<div class = 'resultado' id='resultado1' tabindex='-1'>";
         echo "<h3>Datos de la Operación: </h3>";
 
         echo "<ul>";
@@ -157,6 +157,12 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
         echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
 
    echo "</div>";
+
+   echo "<script>
+        window.onload = function() {
+            document.getElementById('resultado1').focus();  // Establece el enfoque en el div cuando la página se cargue
+        };
+    </script>";
 
 
 }
@@ -233,7 +239,7 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
     } 
 
     //LO QUE MUESTRA POR PANTALLA
-    echo "<div class = 'resultado'>";
+    echo "<div class = 'resultado' id='resultado2' tabindex='-1'>";
         echo "<h3>Datos de la Operación: </h3>";
         echo "<ul>";
             echo "<li>Importe a Abonar de Contado $ ". number_format($calculodesc) . "</li>";
@@ -254,6 +260,12 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
         echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
 
     echo "</div>";
+
+    echo "<script>
+        window.onload = function() {
+            document.getElementById('resultado2').focus();  // Establece el enfoque en el div cuando la página se cargue
+        };
+    </script>";
 }
 
 
@@ -332,7 +344,7 @@ try {
     
     // LO QUE MUESTRA POR PANTALLA
     
-    echo "<div class= 'resultado'>";
+    echo "<div class= 'resultado' id='resultado3' tabindex='-1'>";
 
         echo "<h3>Datos de la Operación.</h3>";
 
@@ -364,6 +376,12 @@ try {
 
         
     echo "</div>";
+
+    echo "<script>
+        window.onload = function() {
+            document.getElementById('resultado3').focus();  // Establece el enfoque en el div cuando la página se cargue
+        };
+    </script>";
 
 }
 

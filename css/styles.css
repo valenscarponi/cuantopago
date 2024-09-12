@@ -119,7 +119,7 @@ li{
 }
 
 .signo{
-    display: inline;
+    display: inline-flex;
     font-size: 1.4rem;
     font-weight: 700;
     margin: 0;
@@ -175,8 +175,8 @@ li{
     align-items: center;
     background-color: var(--primarioOscuro);
     padding: 2rem 2rem 3.5rem 2rem;
-    width: 75%;
-    height: 40rem;
+    width: 65%;
+    height: 45rem;
 
     margin: 2rem;
 
@@ -279,9 +279,7 @@ input[type=number] { -moz-appearance:textfield; }
 
 } 
 
-.btn-form{
-    margin: .5rem 0;
-}
+
 
 input[type = 'submit']{
     border: 1px solid var(--border);
@@ -317,6 +315,8 @@ input[type = 'submit']:hover{
 
 .btn-form{
     display: block;
+    margin: .5rem;
+    
 }
 
 /* RESULTADO */
@@ -328,7 +328,7 @@ input[type = 'submit']:hover{
     justify-content: center;
     background-color: var(--Secundario);
     color: var(--blanco);
-    width: 75%;
+    width: 65%;
     height: 70%;
     padding: 2rem;
     text-align: left;
