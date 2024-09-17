@@ -48,7 +48,7 @@
     
                 <div class="form__button">
                     <input class = "btn-form" type="submit" name="" value="Siguiente">
-                    <input class = "btn-form" type="submit" name="" value="Volver a Inicio" onclick="enviarFormulario('./index2.php')">
+                    <input class = "btn-form" type="submit" name="" value="Volver a Inicio" onclick="enviarFormulario('./index.php')">
                 </div>
             </fieldset>
         </form>
@@ -79,7 +79,7 @@ if (isset($_GET['radio2'])) {
                     <input class="campo__field" id = "tna" type="text" name="tasa" value="" required>
                 </div>
                 <div class="form_fielset_input-submit">
-                    <input type="submit" name="Subir">
+                    <input type="submit" name="Calcular">
                 </div>
             </fieldset>
         </form>
@@ -113,6 +113,13 @@ if (isset($_GET['capital']) && isset($_GET['plazo']) && isset($_GET['tasa'])) {
         echo "</ul>";
     echo "</div>";
 
+    echo "<script>
+        window.onload = function() {
+            var resultadoDiv = document.querySelector('.resultado');  // Selecciona el primer div con la clase 'resultado'
+            resultadoDiv.scrollIntoView({ behavior: 'smooth' });  // Hace scroll hacia el div cuando la página se carga
+        };
+    </script>";
+
 }
 
 
@@ -142,7 +149,7 @@ if (isset($_GET['radio2'])) {
                     <input class="campo__field" id = "tea"type="text" name="tasa1" value="" required>
                 </div>
                 <div class="form_fielset_input-submit">
-                    <input type="submit" name="Subir">
+                    <input type="submit" name="Calcular">
                 </div>
             </fieldset>
         </form>
@@ -182,6 +189,13 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
             echo "<li>Intereses Generados: " . number_format($calculo2, 2). " % </li>";
         echo "</ul>";
     echo "</div>";
+
+    echo "<script>
+        window.onload = function() {
+            var resultadoDiv = document.querySelector('.resultado');  // Selecciona el primer div con la clase 'resultado'
+            resultadoDiv.scrollIntoView({ behavior: 'smooth' });  // Hace scroll hacia el div cuando la página se carga
+        };
+    </script>";
     
 
 }
