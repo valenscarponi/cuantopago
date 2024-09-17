@@ -155,15 +155,19 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
         CurlBcra(3);
         // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
         echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
-
-   echo "</div>";
-
-   echo "<script>
-        window.onload = function() {
-            document.getElementById('resultado1').focus();  // Establece el enfoque en el div cuando la página se cargue
-        };
+    
+        
+    echo "</div>";
+        
+    echo "<script>
+    window.onload = function() {
+        document.getElementById('resultado1').focus();  // Establece el enfoque en el div cuando la página se cargue
+    };
     </script>";
-
+    
+    echo "<div class='form__fielset__button'>";
+        echo "<input class = 'btn-form' type='submit' name='' value='Volver a Inicio' onclick=\"window.location.href='./index.php';\">";
+    echo "</div>";
 
 }
 
@@ -258,14 +262,18 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
         CurlBcra(3);
         // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
         echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
-
     echo "</div>";
 
+    
     echo "<script>
-        window.onload = function() {
-            document.getElementById('resultado2').focus();  // Establece el enfoque en el div cuando la página se cargue
-        };
+    window.onload = function() {
+        document.getElementById('resultado2').focus();  // Establece el enfoque en el div cuando la página se cargue
+    };
     </script>";
+    
+    echo "<div class='form__fielset__button'>";
+        echo "<input class = 'btn-form' type='submit' name='' value='Volver a Inicio' onclick=\"window.location.href='./index.php';\">";
+    echo "</div>";
 }
 
 
@@ -373,16 +381,17 @@ try {
         // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
         echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
     
-
-        
     echo "</div>";
-
+        
     echo "<script>
-        window.onload = function() {
-            document.getElementById('resultado3').focus();  // Establece el enfoque en el div cuando la página se cargue
-        };
+    window.onload = function() {
+        document.getElementById('resultado3').focus();  // Establece el enfoque en el div cuando la página se cargue
+    };
     </script>";
-
+    
+    echo "<div class='form__fielset__button'>";
+        echo "<input class = 'btn-form' type='submit' name='' value='Volver a Inicio' onclick=\"window.location.href='./index.php';\">";
+    echo "</div>";
 }
 
 

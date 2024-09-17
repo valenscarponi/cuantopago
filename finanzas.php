@@ -120,6 +120,10 @@ if (isset($_GET['capital']) && isset($_GET['plazo']) && isset($_GET['tasa'])) {
         };
     </script>";
 
+    echo "<div class='form__button'>";
+        echo "<input class = 'btn-form' type='submit' name='' value='Volver a Inicio' onclick=\"window.location.href='./index.php';\">";
+    echo "</div>";
+
 }
 
 
@@ -196,6 +200,11 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
             resultadoDiv.scrollIntoView({ behavior: 'smooth' });  // Hace scroll hacia el div cuando la página se carga
         };
     </script>";
+
+    echo "<div class='form__button'>";
+        echo "<input class = 'btn-form' type='submit' name='' value='Volver a Inicio' onclick=\"window.location.href='./index.php';\">";
+    echo "</div>";
+    
     
 
 }
@@ -206,7 +215,6 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
         <p>© Copyright | Todos los derechos reservados 2024</p>
     </footer>
 
-    <script src="./js/script.js"></script>
 </body>
-
+<script src="./js/script.js"></script>
 </html>
