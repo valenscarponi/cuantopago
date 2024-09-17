@@ -79,7 +79,7 @@ if (isset($_GET['radio2'])) {
                     <input class="campo__field" id = "tna" type="text" name="tasa" value="" required>
                 </div>
                 <div class="form_fielset_input-submit">
-                    <input type="submit" name="Calcular">
+                    <input type="submit" name="Subir" value="Calcular">
                 </div>
             </fieldset>
         </form>
@@ -149,7 +149,7 @@ if (isset($_GET['radio2'])) {
                     <input class="campo__field" id = "tea"type="text" name="tasa1" value="" required>
                 </div>
                 <div class="form_fielset_input-submit">
-                    <input type="submit" name="Calcular">
+                    <input type="submit" name="Subir" value="Calcular">
                 </div>
             </fieldset>
         </form>
