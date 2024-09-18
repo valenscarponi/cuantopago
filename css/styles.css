@@ -377,9 +377,12 @@ input[type = 'submit']:hover{
 /* COLORES */
 
 .verde{
-    color: rgb(143, 255, 143);
+    color: rgb(0, 255, 0);
+    font-weight: 700;
+
 }
 
 .rojo{
-    color: rgb(255, 92, 92);
+    color: rgb(255, 0, 0);
+    font-weight: 700;
 }
