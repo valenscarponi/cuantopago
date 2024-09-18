@@ -37,12 +37,12 @@
             <legend class="form__title">Ingrese datos:</legend>
             <fieldset class="form__fielset">
                 <div class="form_fielset_input-checkbox">
-                    <label class="campo__label f-size" for="TRADICIONAL">Plazo Fijo Tradicional</label>
+                    <label class="campo__label f-size" for="TRADICIONAL">Plazo Fijo Tradicional.</label>
                     <input class="input__radio" type="radio" name="radio2" value="TRADICIONAL" id="TRADICIONAL">
                 </div>
     
                 <div class="form_fielset_input-checkbox">
-                    <label class="campo__label f-size" for="BILLETERA">Billeteras Virtuales</label>
+                    <label class="campo__label f-size" for="BILLETERA">Billeteras Virtuales.</label>
                     <input class="input__radio" type="radio" name="radio2" value="BILLETERA" id="BILLETERA">
                 </div>
     

@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="form__fielset__input-checkbox">
-                    <label class="campo__label f-size" for="credito">Obtener un Préstamo</label> 
+                    <label class="campo__label f-size" for="credito">Obtener un Préstamo.</label> 
                     <input class="input__radio" type="radio" name="radio1" id = "credito" value="credito">
                 </div>
                 
@@ -138,8 +138,8 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
         echo "<h3>Datos de la Operación: </h3>";
 
         echo "<ul>";
-            echo "<li>Importe a Abonar de Contado: $ ". number_format($numero1) ."</li>";
-            echo "<li>Importe Total a Abonar en Coutas $ ". number_format($calculo) ."</li>";
+            echo "<li>Importe a Abonar de Contado: $ ". number_format($numero1, 2) ."</li>";
+            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($calculo, 2) ."</li>";
             // echo "<li>Valor de cada cuota en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
             echo "<li>CFT (Costo Financiero Total) Anual:". number_format($formula2, 2) ." % </li>";
@@ -246,8 +246,8 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
     echo "<div class = 'resultado' id='resultado2' tabindex='-1'>";
         echo "<h3>Datos de la Operación: </h3>";
         echo "<ul>";
-            echo "<li>Importe a Abonar de Contado $ ". number_format($calculodesc) . "</li>";
-            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($precio) ."</li> ";
+            echo "<li>Importe a Abonar de Contado $ ". number_format($calculodesc, 2) . "</li>";
+            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($precio, 2) ."</li> ";
             echo "<li>CFT (Costo Financiero Total) Anual:". number_format($formula2 , 2)." % </li>";
         echo "</ul>";
 
@@ -357,8 +357,8 @@ try {
         echo "<h3>Datos de la Operación.</h3>";
 
         echo "<ul>";
-            echo "<li>Importe Préstamo Solicitado $". number_format($numero1) ."</li>";
-            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($calculo) ."</li>";
+            echo "<li>Importe Préstamo Solicitado $". number_format($numero1, 2) ."</li>";
+            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($calculo, 2) ."</li>";
             // echo "<li>Valor de cada couta en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
 

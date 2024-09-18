@@ -65,7 +65,7 @@ li{
 }
 
 .f-size{
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .form__fielset{
@@ -377,9 +377,9 @@ input[type = 'submit']:hover{
 /* COLORES */
 
 .verde{
-    color: green;
+    color: rgb(143, 255, 143);
 }
 
 .rojo{
-    color: red;
+    color: rgb(255, 92, 92);
 }
