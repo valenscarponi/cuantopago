@@ -45,7 +45,7 @@ if ($response !== FALSE) {
                         }
                         if ($proceso == 1) {
                             if ( $innerKey == 'valor'){
-                                echo "Inflación Esperada próx. 12 meses : $innerValue\n";
+                                echo "Inflación Esperada próx. 12 meses : $innerValue %\n";
                                 $proceso = 0;
                             }
 

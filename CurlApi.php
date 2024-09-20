@@ -50,9 +50,9 @@ if (curl_errno($ch)) {
 
                                 // AGREGUÉ ESTO
                                 if ($innerValue > $formula2 ){
-                                    echo "<li>Inflación Esperada próx. 12 meses : "."<span class='rojo'> %". $innerValue."</span> </li>";
+                                    echo "<li>Inflación Esperada próx. 12 meses : "."<span class='rojo'>". $innerValue."  %</span>  </li>";
                                 }else{
-                                    echo "<li>Inflación Esperada próx. 12 meses : "."<span class='verde'> %".$innerValue."</span> </li>";
+                                    echo "<li>Inflación Esperada próx. 12 meses : "."<span class='verde'>".$innerValue."  %</span> </li>";
                                     
                                 }
                                 //  echo "Inflación Esperada próx. 12 meses : $innerValue\n";
@@ -69,9 +69,9 @@ if (curl_errno($ch)) {
 
                                 // AGREGUÉ ESTO
                                 if ($innerValue > $formula2 ){
-                                    echo "<li>Tasa Efectiva Anual Plazo Fijo: "."<span class='rojo'> %".$innerValue."</span> </li>";
+                                    echo "<li>Tasa Efectiva Anual Plazo Fijo: "."<span class='rojo'>".$innerValue."  %</span> </li>";
                                 }else{
-                                    echo "<li>Tasa Efectiva Anual Plazo Fijo: "."<span class='verde'> %".$innerValue."</span> </li>";
+                                    echo "<li>Tasa Efectiva Anual Plazo Fijo: "."<span class='verde'>".$innerValue."  %</span> </li>";
                                     
                                 }
                                 //  echo "Tasa Efectiva Anual Plazo Fijo: $innerValue\n";

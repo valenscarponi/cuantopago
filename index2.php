@@ -138,11 +138,11 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
         echo "<h3>Datos de la Operación: </h3>";
 
         echo "<ul>";
-            echo "<li>Importe a Abonar de Contado: $ ". number_format($numero1, 2) ."</li>";
-            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($calculo, 2) ."</li>";
+            echo "<li>Importe a Abonar de Contado: $ ". number_format($numero1, 2, ',','.') ."</li>";
+            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($calculo, 2, ',','.') ."</li>";
             // echo "<li>Valor de cada cuota en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
-            echo "<li>CFT (Costo Financiero Total) Anual:". number_format($formula2, 2) ." % </li>";
+            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2, 2, ',','.') ." % </li>";
         echo "</ul>";
 
         echo "<p class = 'font-s'>El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.</p>";
@@ -246,9 +246,9 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
     echo "<div class = 'resultado' id='resultado2' tabindex='-1'>";
         echo "<h3>Datos de la Operación: </h3>";
         echo "<ul>";
-            echo "<li>Importe a Abonar de Contado $ ". number_format($calculodesc, 2) . "</li>";
-            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($precio, 2) ."</li> ";
-            echo "<li>CFT (Costo Financiero Total) Anual:". number_format($formula2 , 2)." % </li>";
+            echo "<li>Importe a Abonar de Contado $ ". number_format($calculodesc, 2, ',','.') . "</li>";
+            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($precio, 2, ',','.') ."</li> ";
+            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2 , 2, ',','.')." % </li>";
         echo "</ul>";
 
 
@@ -357,12 +357,12 @@ try {
         echo "<h3>Datos de la Operación.</h3>";
 
         echo "<ul>";
-            echo "<li>Importe Préstamo Solicitado $". number_format($numero1, 2) ."</li>";
-            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($calculo, 2) ."</li>";
+            echo "<li>Importe Préstamo Solicitado $". number_format($numero1, 2, ',','.') ."</li>";
+            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($calculo, 2, ',','.') ."</li>";
             // echo "<li>Valor de cada couta en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
 
-            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2, 2) ." % </li>";
+            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2, 2, ',','.') ." % </li>";
             // if ($numero1 > $formula2){
             // } else{
             //     echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";    
