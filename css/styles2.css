@@ -75,7 +75,7 @@ legend{
     height: 47.5rem;
     margin-top: 10rem;
     margin-bottom: 2rem;
-    width: 75%;
+    width: 85%;
     height: 60rem;
     display: flex;
     flex-direction: column;
@@ -258,7 +258,7 @@ input[type = 'submit']:hover{
     align-items: center;
     background-color: var(--primarioOscuro);
     padding: 2rem 2rem 3.5rem 2rem;
-    width: 100%;
+    width: 113%;
     height: 40rem;
 
     margin: 2rem;
@@ -320,7 +320,7 @@ label{
     justify-content: center;
     background-color: var(--Secundario);
     color: var(--blanco);
-    width: 75%;
+    width: 85%;
     height: 70%;
     padding: 2rem;
     text-align: left;

@@ -109,8 +109,8 @@ if (isset($_GET['capital']) && isset($_GET['plazo']) && isset($_GET['tasa'])) {
     echo "<div class = 'resultado'>";
         echo "<h3>Datos de la Operación: </h3>";
         echo "<ul>";
-            echo "<li>Capital Inicial a Invertir: $". $capital . "</li>";
-            echo "<li>Plazo (días) :  $plazo </li>";
+            echo "<li>Capital Inicial a Invertir: $". number_format($capital, 2, ',','.') . "</li>";
+            echo "<li>Plazo (Días):  $plazo </li>";
             echo "<li>Tasa Nominal Anual (TNA):  $tasa % </li>";
             echo "<li>Intereses Generados: $" . number_format($resultado, 2, ',','.').  "</li>";
         echo "</ul>";
@@ -190,8 +190,8 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
     echo "<div class = 'resultado'>";
         echo "<h3>Datos de la Operación: </h3>";
         echo "<ul>";
-            echo "<li>Capital Inicial a Invertir: $". $capital ."</li>";
-            echo "<li>Plazo (días) :  $plazo </li>";
+            echo "<li>Capital Inicial a Invertir: $". number_format($capital, 2, ',','.') ."</li>";
+            echo "<li>Plazo (Días):  $plazo </li>";
             echo "<li>Tasa Efectiva Anual (TEA):  $tasa  % </li>";
             echo "<li>Intereses Generados: $" . number_format($calculo2, 2, ',','.'). "</li>";
         echo "</ul>";

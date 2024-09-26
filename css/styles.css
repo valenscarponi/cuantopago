@@ -92,7 +92,7 @@ li{
     height: 47.5rem;
     margin-top: 10rem;
     margin-bottom: 2rem;
-    width: 75%;
+    width: 85%;
     height: 60rem;
     display: flex;
     flex-direction: column;
@@ -174,7 +174,7 @@ li{
     align-items: center;
     background-color: var(--primarioOscuro);
     padding: 2rem 2rem 3.5rem 2rem;
-    width: 65%;
+    width: 76%;
     height: 45rem;
 
     margin: 2rem;
@@ -327,7 +327,7 @@ input[type = 'submit']:hover{
     justify-content: center;
     background-color: var(--Secundario);
     color: var(--blanco);
-    width: 65%;
+    width: 76%;
     height: 70%;
     padding: 2rem;
     text-align: left;
