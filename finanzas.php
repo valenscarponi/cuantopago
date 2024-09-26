@@ -220,6 +220,8 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
 
     <script src="./js/script.js"></script>
     <script src="https://kit.fontawesome.com/8dd3949086.js" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7831754402905930"
+     crossorigin="anonymous"></script>
 
 </body>
 </html>
