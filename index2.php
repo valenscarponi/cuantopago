@@ -2,6 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+       <!--SEO-->
+    <meta name="description" 
+        content="Calculadora de Costo Financiero Total que permite comparar dicho costo con la inflación proyectada a 12 meses y la tasa efectiva anual de plazo fijo.">
+
+    <meta name="keywords"
+        content="calculadora de cuotas, calculadora financiera, cuanto me va a costar, calcular plazo fijo, calcular billetera virtual, cuanto me cuesta con descuento, me conviene comprar, totoras, cuanto pago, economia, economia familiar, costo financiero total,plazo fijo, billetra virtual, cuanto necesito para pagar un producto en cuotas, me conviene invertir, costo financiero total de una compra, calcular intereses de una compra">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title"
+        content="Calculadora de Costo Financiero Total de los datos de una compra">
+    <meta property="og:description"
+        content="Calculadora de Costo Financiero Total que permite comparar dicho costo con la inflación proyectada a 12 meses y la tasa efectiva anual de plazo fijo.">
+    <meta property="og:url" content="https://www.cuantopago.com.ar">
+    <meta property="og:type" contentit="website">
+    <meta property="og:image" content="https://cuantopago.com.ar/img/logo.jpg">
+
     <meta name="description" content="Calculadora de Costo Financiero Total">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +30,22 @@
     <link rel="preload" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/normalize.css">
     <title>CuantoPago</title>
+
+         <!-- Datos Estructurados (Structured Data) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Calculadora de Costo Financiero: ¿Comprar al Contado o en Cuotas?",
+      "description": "Compara si te conviene pagar al contado con descuento o en cuotas con recargo. Calcula fácilmente el costo financiero total",
+      "url": "https://www.cuantopago.com.ar",
+      "publisher": {
+        "@type": "Organization",
+        "name": "IES 48 - Totoras - Argentina"
+      }
+    }
+    </script>
+
 </head>
 
 
@@ -36,6 +68,10 @@
                 <h1 class="container__title no-margin">¿Cuánto Pago?</h1>
                 <p>Calculadora de Costo Financiero Total</p>
             </div>
+            <div class="container__icono">
+                <a href="https://www.instagram.com/cuantopagoapp?igsh=YXBmYnFmeWs2dHhx"><i class="fa-brands fa-instagram" style="color: #0a1828; font-size: 2rem"></i></a>
+            </div>
+
         </div>
 
         <!-- FORMULARIO DE CHECKBOX -->
@@ -138,8 +174,8 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
         echo "<h3>Datos de la Operación: </h3>";
 
         echo "<ul>";
-            echo "<li>Importe a Abonar de Contado: $ ". number_format($numero1, 2, ',','.') ."</li>";
-            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($calculo, 2, ',','.') ."</li>";
+            echo "<li>Importe a Abonar de Contado: $". number_format($numero1, 2, ',','.') ."</li>";
+            echo "<li>Importe Total a Abonar en Cuotas $". number_format($calculo, 2, ',','.') ."</li>";
             // echo "<li>Valor de cada cuota en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
             echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2, 2, ',','.') ." % </li>";
@@ -246,8 +282,8 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
     echo "<div class = 'resultado' id='resultado2' tabindex='-1'>";
         echo "<h3>Datos de la Operación: </h3>";
         echo "<ul>";
-            echo "<li>Importe a Abonar de Contado $ ". number_format($calculodesc, 2, ',','.') . "</li>";
-            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($precio, 2, ',','.') ."</li> ";
+            echo "<li>Importe a Abonar de Contado $". number_format($calculodesc, 2, ',','.') . "</li>";
+            echo "<li>Importe Total a Abonar en Cuotas $". number_format($precio, 2, ',','.') ."</li> ";
             echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2 , 2, ',','.')." % </li>";
         echo "</ul>";
 
@@ -299,7 +335,7 @@ if ($_GET['radio1']=="credito"){
             </div>
 
             <div class="form__fielset__input">
-                <label class="campo__label" for="PROMEDIO">Cuota Promedio Abonar </label>
+                <label class="campo__label" for="PROMEDIO">Cuota Promedio Abonar</label>
                 <div class="input">
                     <p class="signo">$</p>
                     <input class="campo__field" min = "0" type="number" name="PROMEDIO" id = "PROMEDIO" value="" required>
@@ -358,7 +394,7 @@ try {
 
         echo "<ul>";
             echo "<li>Importe Préstamo Solicitado $". number_format($numero1, 2, ',','.') ."</li>";
-            echo "<li>Importe Total a Abonar en Cuotas $ ". number_format($calculo, 2, ',','.') ."</li>";
+            echo "<li>Importe Total a Abonar en Cuotas $". number_format($calculo, 2, ',','.') ."</li>";
             // echo "<li>Valor de cada couta en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
 
@@ -482,7 +518,7 @@ function calcularTasaInteres($valorPresente, $cuota, $numeroPeriodos) {
     </footer>
 
     <script src="./js/script.js"></script>
-    <script src="./js/validardatos.js"></script>
+    <script src="https://kit.fontawesome.com/8dd3949086.js" crossorigin="anonymous"></script>
 
 
 </body>

@@ -164,9 +164,8 @@ li{
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    margin: 2rem;
+    margin: 0 2rem 2rem 2rem;
 }
-
 
 .form{
     display: flex;
@@ -377,7 +376,7 @@ input[type = 'submit']:hover{
 /* COLORES */
 
 .verde{
-    color: rgb(0, 255, 0);
+    color: rgb(163, 252, 163);
     font-weight: 700;
     background-color: #000;
     padding: .5rem;
@@ -385,7 +384,7 @@ input[type = 'submit']:hover{
 }
 
 .rojo{
-    color: rgb(255, 0, 0);
+    color: rgb(253, 165, 165);
     font-weight: 700;
     background-color: var(--blanco);
     padding: .5rem;

@@ -29,6 +29,9 @@
             <div class="container__contenido">
                 <h1 class="container__title no-margin">Inversión</h1>
             </div>
+            <div class="container__icono">
+                <a href="https://www.instagram.com/cuantopagoapp?igsh=YXBmYnFmeWs2dHhx"><i class="fa-brands fa-instagram" style="color: #0a1828; font-size: 2rem"></i></a>
+            </div>
         </div>
 
         <!-- FORMULARIO DE CHECKBOX -->
@@ -106,10 +109,10 @@ if (isset($_GET['capital']) && isset($_GET['plazo']) && isset($_GET['tasa'])) {
     echo "<div class = 'resultado'>";
         echo "<h3>Datos de la Operación: </h3>";
         echo "<ul>";
-            echo "<li>Capital Inicial a Invertir:  $capital </li>";
+            echo "<li>Capital Inicial a Invertir: $". $capital . "</li>";
             echo "<li>Plazo (dias) :  $plazo </li>";
             echo "<li>Tasa Nominal Anual (TNA):  $tasa % </li>";
-            echo "<li>Intereses Generados: " . number_format($resultado, 2, ',','.').  " % </li>";
+            echo "<li>Intereses Generados: $" . number_format($resultado, 2, ',','.').  "</li>";
         echo "</ul>";
     echo "</div>";
 
@@ -190,7 +193,7 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
             echo "<li>Capital Inicial a Invertir:  $capital </li>";
             echo "<li>Plazo (dias) :  $plazo </li>";
             echo "<li>Tasa Efectiva Anual (TEA):  $tasa  % </li>";
-            echo "<li>Intereses Generados: " . number_format($calculo2, 2, ',','.'). " % </li>";
+            echo "<li>Intereses Generados: $" . number_format($calculo2, 2, ',','.'). "</li>";
         echo "</ul>";
     echo "</div>";
 
@@ -215,6 +218,8 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
         <p>© Copyright | Todos los derechos reservados 2024</p>
     </footer>
 
+    <script src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/8dd3949086.js" crossorigin="anonymous"></script>
+
 </body>
-<script src="./js/script.js"></script>
 </html>
