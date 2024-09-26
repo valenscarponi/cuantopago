@@ -46,6 +46,19 @@
     }
     </script>
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7831754402905930"
+     crossorigin="anonymous"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M74TEQ2QWM"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-M74TEQ2QWM');
+    </script>
+
 </head>
 
 
@@ -519,8 +532,7 @@ function calcularTasaInteres($valorPresente, $cuota, $numeroPeriodos) {
 
     <script src="./js/script.js"></script>
     <script src="https://kit.fontawesome.com/8dd3949086.js" crossorigin="anonymous"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7831754402905930"
-     crossorigin="anonymous"></script>
+
 
 
 </body>
