@@ -37,7 +37,7 @@ function validarDatos() {
     var cuotas = parseFloat(document.getElementById('OPCION2').value) || 0;
     var cantidad_cuotas = parseFloat(document.getElementById('OPCION3').value) || 0;
 
-    if (contado >= (cuotas * cantidad_cuotas)) {
+    if (contado <= (cuotas * cantidad_cuotas)) {
         return true;
     } else {
         alert('Valor de las Cuotas Incorrecto');
@@ -50,7 +50,7 @@ function validarDatos2() {
     var cuota = parseFloat(document.getElementById('PROMEDIO').value) || 0;
     var cantidades_cuotas = parseFloat(document.getElementById('CUOTAS').value) || 0;
 
-    if (credito >= (cuota * cantidades_cuotas)) {
+    if (credito <= (cuota * cantidades_cuotas)) {
         return true;
     } else {
         alert('Valor de las Cuotas Incorrecto');

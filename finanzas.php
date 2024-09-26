@@ -30,7 +30,7 @@
                 <h1 class="container__title no-margin">Inversión</h1>
             </div>
             <div class="container__icono">
-                <a href="https://www.instagram.com/cuantopagoapp?igsh=YXBmYnFmeWs2dHhx"><i class="fa-brands fa-instagram" style="color: #0a1828; font-size: 2rem"></i></a>
+                <a href="https://www.instagram.com/cuantopagoapp?igsh=YXBmYnFmeWs2dHhx" target="_blank"><i class="fa-brands fa-instagram" style="color: #0a1828; font-size: 2rem"></i></a>
             </div>
         </div>
 
@@ -73,7 +73,7 @@ if (isset($_GET['radio2'])) {
                 </div>
 
                 <div class="form_fielset_input">
-                    <label class="campo__label" for="plazo1">Plazo (dias) </label>
+                    <label class="campo__label" for="plazo1">Plazo (días)</label>
                     <input class="campo__field" id = "plazo1" type="text" name="plazo" value="" required>
                 </div>
 
@@ -110,7 +110,7 @@ if (isset($_GET['capital']) && isset($_GET['plazo']) && isset($_GET['tasa'])) {
         echo "<h3>Datos de la Operación: </h3>";
         echo "<ul>";
             echo "<li>Capital Inicial a Invertir: $". $capital . "</li>";
-            echo "<li>Plazo (dias) :  $plazo </li>";
+            echo "<li>Plazo (días) :  $plazo </li>";
             echo "<li>Tasa Nominal Anual (TNA):  $tasa % </li>";
             echo "<li>Intereses Generados: $" . number_format($resultado, 2, ',','.').  "</li>";
         echo "</ul>";
@@ -147,7 +147,7 @@ if (isset($_GET['radio2'])) {
                 </div>
                 
                 <div class="form_fielset_input">
-                    <label class="campo__label" for="plazo">Plazo (dias) </label>
+                    <label class="campo__label" for="plazo">Plazo (días) </label>
                     <input class="campo__field" id = "plazo" type="text" name="plazo1" value="" required>
                 </div>
 
@@ -190,8 +190,8 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
     echo "<div class = 'resultado'>";
         echo "<h3>Datos de la Operación: </h3>";
         echo "<ul>";
-            echo "<li>Capital Inicial a Invertir:  $capital </li>";
-            echo "<li>Plazo (dias) :  $plazo </li>";
+            echo "<li>Capital Inicial a Invertir: $". $capital ."</li>";
+            echo "<li>Plazo (días) :  $plazo </li>";
             echo "<li>Tasa Efectiva Anual (TEA):  $tasa  % </li>";
             echo "<li>Intereses Generados: $" . number_format($calculo2, 2, ',','.'). "</li>";
         echo "</ul>";
