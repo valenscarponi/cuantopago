@@ -43,7 +43,7 @@
                 <h1 class="container__title no-margin">Inversión</h1>
             </div>
             <div class="container__icono">
-                <a href="https://www.instagram.com/cuantopagoapp?igsh=YXBmYnFmeWs2dHhx" target="_blank"><i class="fa-brands fa-instagram" style="color: #0a1828; font-size: 2rem"></i></a>
+                <a href="https://www.instagram.com/cuantopagoapp?igsh=YXBmYnFmeWs2dHhx" target="_blank"><i class="fa-brands fa-instagram" style="color: #0a1828; font-size: 2rem; margin-top: 1rem;"></i></a>
             </div>
         </div>
 
@@ -82,17 +82,26 @@ if (isset($_GET['radio2'])) {
             <fieldset class="form__fielset">
                 <div class="form_fielset_input">
                     <label class="campo__label" for="capital1">Capital Inicial a Invertir</label>
-                    <input class="campo__field" id = "capital1" type="text" name="capital" autofocus value="" required>
+                    <div class="input">
+                        <p class="signo">$</p>
+                        <input class="campo__field" id = "capital1" type="text" name="capital" autofocus value="" required>
+                    </div>
                 </div>
 
                 <div class="form_fielset_input">
-                    <label class="campo__label" for="plazo1">Plazo (días)</label>
-                    <input class="campo__field" id = "plazo1" type="text" name="plazo" value="" required>
+                    <label class="campo__label" for="plazo1">Plazo (Días)</label>
+                    <div class="input">
+                        <p class="signo">P</p>
+                        <input class="campo__field" id = "plazo1" type="text" name="plazo" value="" required>
+                    </div>
                 </div>
 
                 <div class="form_fielset_input">
                     <label class="campo__label" for="tna">Tasa Nominal Anual (TNA)</label>
-                    <input class="campo__field" id = "tna" type="text" name="tasa" value="" required>
+                    <div class="input">
+                        <p class="signo">TNA</p>
+                        <input class="campo__field" id = "tna" type="text" name="tasa" value="" required>
+                    </div>
                 </div>
                 <div class="form_fielset_input-submit">
                     <input type="submit" name="Subir" value="Calcular">
@@ -124,7 +133,7 @@ if (isset($_GET['capital']) && isset($_GET['plazo']) && isset($_GET['tasa'])) {
         echo "<ul>";
             echo "<li>Capital Inicial a Invertir: $". number_format($capital, 2, ',','.') . "</li>";
             echo "<li>Plazo (Días):  $plazo </li>";
-            echo "<li>Tasa Nominal Anual (TNA):  $tasa % </li>";
+            echo "<li>Tasa Nominal Anual (TNA):  $tasa% </li>";
             echo "<li>Intereses Generados: $" . number_format($resultado, 2, ',','.').  "</li>";
         echo "</ul>";
     echo "</div>";
@@ -156,17 +165,26 @@ if (isset($_GET['radio2'])) {
             <fieldset class="form__fielset">
                 <div class="form_fielset_input">
                     <label class="campo__label" for="capital">Capital Inicial a Invertir</label>
-                    <input class="campo__field" id = "capital" type="text" name="capital1" autofocus value="" required>
+                    <div class="input">
+                        <p class="signo">$</p>
+                        <input class="campo__field" id = "capital" type="text" name="capital1" autofocus value="" required>
+                    </div>
                 </div>
                 
                 <div class="form_fielset_input">
-                    <label class="campo__label" for="plazo">Plazo (días) </label>
-                    <input class="campo__field" id = "plazo" type="text" name="plazo1" value="" required>
+                    <label class="campo__label" for="plazo">Plazo (Días)</label>
+                    <div class="input">
+                        <p class="signo">P</p>
+                        <input class="campo__field" id = "plazo" type="text" name="plazo1" value="" required>
+                    </div>
                 </div>
 
                 <div class="form_fielset_input">
                     <label class="campo__label" for="tea">Tasa Efectiva Anual (TEA)</label>
-                    <input class="campo__field" id = "tea"type="text" name="tasa1" value="" required>
+                    <div class="input">
+                        <p class="signo">TEA</p>
+                        <input class="campo__field" id = "tea"type="text" name="tasa1" value="" required>
+                    </div>
                 </div>
                 <div class="form_fielset_input-submit">
                     <input type="submit" name="Subir" value="Calcular">
@@ -205,7 +223,7 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
         echo "<ul>";
             echo "<li>Capital Inicial a Invertir: $". number_format($capital, 2, ',','.') ."</li>";
             echo "<li>Plazo (Días):  $plazo </li>";
-            echo "<li>Tasa Efectiva Anual (TEA):  $tasa  % </li>";
+            echo "<li>Tasa Efectiva Anual (TEA):  $tasa% </li>";
             echo "<li>Intereses Generados: $" . number_format($calculo2, 2, ',','.'). "</li>";
         echo "</ul>";
     echo "</div>";
@@ -228,7 +246,7 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
 ?>
 
     <footer class="footer">
-        <p>© Copyright | Todos los derechos reservados 2024</p>
+        <p>© Copyright | Todos los Derechos Reservados | 2024</p>
     </footer>
 
     <script src="./js/script.js"></script>

@@ -60,6 +60,10 @@ li{
     margin: 0;
 }
 
+.margin{
+    margin: 1rem 0;
+}
+
 .text-aling{
     text-align: center;
 }
@@ -123,6 +127,8 @@ li{
     font-size: 1.4rem;
     font-weight: 700;
     margin: 0;
+    margin: 0 .75rem 0 0;
+    color: var(--Oscuro);
 }
 
 @media (min-width: 768px) {
@@ -339,6 +345,16 @@ input[type = 'submit']:hover{
     
 }
 
+.resultado ul{
+    margin: 0;
+    padding: 0;
+}
+
+.resultado p{
+    margin: .75rem 0;
+    padding: 0;
+}
+
 
 
 @media (min-width: 768px) {
@@ -376,7 +392,7 @@ input[type = 'submit']:hover{
 /* COLORES */
 
 .verde{
-    color: rgb(163, 252, 163);
+    color: rgb(98, 255, 98);
     font-weight: 700;
     background-color: #000;
     padding: .5rem;
@@ -384,7 +400,7 @@ input[type = 'submit']:hover{
 }
 
 .rojo{
-    color: rgb(253, 165, 165);
+    color: rgb(255, 100, 100);
     font-weight: 700;
     background-color: var(--blanco);
     padding: .5rem;

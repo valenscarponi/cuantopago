@@ -184,14 +184,14 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
    
    // LO QUE MUESTRA POR PANTALLA
     echo "<div class = 'resultado' id='resultado1' tabindex='-1'>";
-        echo "<h3>Datos de la Operación: </h3>";
+        echo "<h3 class = 'margin'>Datos de la Operación: </h3>";
 
         echo "<ul>";
             echo "<li>Importe a Abonar de Contado: $". number_format($numero1, 2, ',','.') ."</li>";
             echo "<li>Importe Total a Abonar en Cuotas: $". number_format($calculo, 2, ',','.') ."</li>";
             // echo "<li>Valor de cada cuota en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
-            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2, 2, ',','.') ." % </li>";
+            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2, 2, ',','.') ."% </li>";
         echo "</ul>";
 
         echo "<p class = 'font-s'>El CFT representa el costo total de un préstamo o servicio financiero, expresado como una tasa anual. A diferencia de la Tasa Nominal Anual (TNA), el CFT incluye todos los costos asociados, como intereses, seguros y gastos administrativos.</p>";
@@ -200,7 +200,7 @@ if (isset($_GET['OPCION1']) && isset($_GET['OPCION2']) && isset($_GET['OPCION3']
         //     El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr> ";
 
 
-        echo "<h4>Referencias</h4>";
+        echo "<h4 class = 'margin'>Referencias</h4>";
         CurlBcra(3);
         // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
         echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
@@ -293,11 +293,11 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
 
     //LO QUE MUESTRA POR PANTALLA
     echo "<div class = 'resultado' id='resultado2' tabindex='-1'>";
-        echo "<h3>Datos de la Operación: </h3>";
+        echo "<h3 class = 'margin'>Datos de la Operación: </h3>";
         echo "<ul>";
             echo "<li>Importe a Abonar de Contado: $". number_format($calculodesc, 2, ',','.') . "</li>";
             echo "<li>Importe Total a Abonar en Cuotas: $". number_format($precio, 2, ',','.') ."</li> ";
-            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2 , 2, ',','.')." % </li>";
+            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2 , 2, ',','.')."% </li>";
         echo "</ul>";
 
 
@@ -307,7 +307,7 @@ if (isset($_GET['DATO1']) && isset($_GET['DATO2']) && isset($_GET['DATO3'])) {
         //     El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero'><i class='fa-solid fa-circle-question'></i></abbr> ";
 
 
-        echo "<h4>Referencias</h4>";
+        echo "<h4 class = 'margin'>Referencias</h4>";
         CurlBcra(3);
         // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
         echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
@@ -403,7 +403,7 @@ try {
     
     echo "<div class= 'resultado' id='resultado3' tabindex='-1'>";
 
-        echo "<h3>Datos de la Operación.</h3>";
+        echo "<h3 class = 'margin'>Datos de la Operación.</h3>";
 
         echo "<ul>";
             echo "<li>Importe Préstamo Solicitado: $". number_format($numero1, 2, ',','.') ."</li>";
@@ -411,7 +411,7 @@ try {
             // echo "<li>Valor de cada couta en promedio $numero2 </li>";
             // echo "<li>Cantidad de coutas $numero3 </li>";
 
-            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2, 2, ',','.') ." % </li>";
+            echo "<li>CFT (Costo Financiero Total) Anual: ". number_format($formula2, 2, ',','.') ."% </li>";
             // if ($numero1 > $formula2){
             // } else{
             //     echo "<li>CFT (Costo Financiero Total) Anual: ". "<span class='verde'>". number_format($formula2, 2) ."</span> % </li>";    
@@ -425,7 +425,7 @@ try {
     
 
     
-        echo "<h4>Referencias</h4>";
+        echo "<h4 class = 'margin'>Referencias</h4>";
         CurlBcra(3);
         // echo "<abbr title='Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.'><i class='fa-solid fa-circle-question'></i></abbr> ";
         echo "<p class = 'font-s'>Referencias: El CFT proporciona una visión completa de los costos reales de un préstamo o servicio financiero y debe ser comparado con otras variables, para tomar una adecuada decisión financiera.</p>";
@@ -527,7 +527,7 @@ function calcularTasaInteres($valorPresente, $cuota, $numeroPeriodos) {
 ?>
 
     <footer class="footer">
-        <p>© Copyright | Todos los derechos reservados 2024</p>
+        <p>© Copyright | Todos los Derechos Reservados | 2024</p>
     </footer>
 
     <script src="./js/script.js"></script>
