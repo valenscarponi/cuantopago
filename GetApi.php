@@ -54,6 +54,18 @@ if ($response !== FALSE) {
 
                         if ( $innerKey == 'idVariable' && $innerValue == 35){
                             $proceso = 2;
+
+
+
+
+
+
+
+
+
+
+
+                            
                         }
                          if ($proceso == 2) {
                             if ( $innerKey == 'valor'){  

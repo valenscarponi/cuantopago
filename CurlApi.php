@@ -44,9 +44,9 @@ function CurlBcra(float $lado){
 
                                     // AGREGUÉ ESTO
                                     if ($innerValue > $formula2 ){
-                                        echo "<li>Inflación Esperada próx. 12 meses : "."<span class='rojo'>". $innerValue."  %</span>  </li>";
+                                        echo "<li>Inflación Esperada próx. 12 meses : ". number_format($innerValue, 2, ',','.')."  %</span>  </li>";
                                     } else {
-                                        echo "<li>Inflación Esperada próx. 12 meses : "."<span class='verde'>".$innerValue."  %</span> </li>";
+                                        echo "<li>Inflación Esperada próx. 12 meses : ". number_format($innerValue, 2, ',','.')."  %</span> </li>";
                                     }
                                     $proceso = 0;
                                 }
@@ -60,9 +60,9 @@ function CurlBcra(float $lado){
 
                                     // AGREGUÉ ESTO
                                     if ($innerValue > $formula2 ){
-                                        echo "<li>Tasa Efectiva Anual Plazo Fijo: "."<span class='rojo'>".$innerValue."  %</span> </li>";
+                                        echo "<li>Tasa Efectiva Anual Plazo Fijo: ".number_format($innerValue, 2, ',','.')."  %</span> </li>";
                                     } else {
-                                        echo "<li>Tasa Efectiva Anual Plazo Fijo: "."<span class='verde'>".$innerValue."  %</span> </li>";
+                                        echo "<li>Tasa Efectiva Anual Plazo Fijo: ".number_format($innerValue, 2, ',','.')."  %</span> </li>";
                                     }
                                     $proceso = 0;
                                 }

@@ -85,6 +85,8 @@ legend{
     font-size: 1.4rem;
 }
 
+
+
 .form__fielset{
     border: none;
 }
@@ -99,7 +101,7 @@ legend{
 }
 
 .font-s{
-    font-size: 1rem;
+    font-size: 1.3rem;
     text-align: left;
 }
 
@@ -153,10 +155,6 @@ legend{
     margin: 2rem;
 }
 
-.form__button{
-    display: flex;  
-    flex-direction: column;  
-}
 
 .btn-form{
     margin: .5rem .5rem;
@@ -166,7 +164,17 @@ legend{
     padding-right: 2rem;
     margin: 0;
     font-size: 1.6rem;
+    font-weight: 400;
 
+}
+@media (max-width: 500px){
+    .campo__label{
+        margin: .2rem 0;
+    }
+
+    .input__radio {
+        transform: scale(0.5); /* Reduce el tamaño de los inputs radio */
+    }
 }
 
 @media (min-width: 768px) {
@@ -245,12 +253,12 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] { -moz-appearance:textfield; }
 
 /* BOTON */
-
 .form__button{
     display: flex;
+    flex-direction: column;  
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
 }
 
 input[type = 'submit']{
@@ -356,7 +364,7 @@ label{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0;
+    margin: 4rem 0 2rem 0;
 }
 
 /* RESULTADO */

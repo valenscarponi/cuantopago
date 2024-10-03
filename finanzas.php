@@ -78,7 +78,7 @@ if (isset($_GET['radio2'])) {
 
     <section class="form-secundario">
         <form class="form" id="" method="get">
-        <legend class="form__title">Cálculo Financiero Tradicional</legend>
+        <legend class="form__title">Plazo Fijo Tradicional</legend>
             <fieldset class="form__fielset">
                 <div class="form_fielset_input">
                     <label class="campo__label" for="capital1">Capital Inicial a Invertir</label>
@@ -129,13 +129,15 @@ if (isset($_GET['capital']) && isset($_GET['plazo']) && isset($_GET['tasa'])) {
 
     // LO QUE MUESTRA POR PANTALLA
     echo "<div class = 'resultado'>";
-        echo "<h3>Datos de la Operación: </h3>";
+        echo "<h3>Datos de la Operación. </h3>";
         echo "<ul>";
             echo "<li>Capital Inicial a Invertir: $". number_format($capital, 2, ',','.') . "</li>";
             echo "<li>Plazo (Días):  $plazo </li>";
             echo "<li>Tasa Nominal Anual (TNA):  $tasa% </li>";
             echo "<li>Intereses Generados: $" . number_format($resultado, 2, ',','.').  "</li>";
         echo "</ul>";
+    
+        echo "<p class = 'font-s'>Cada billetera virtual genera rendimiento hasta un monto máximo de capital, verificar en cada una cual es este importe.</p>";
     echo "</div>";
 
     echo "<script>
@@ -145,7 +147,7 @@ if (isset($_GET['capital']) && isset($_GET['plazo']) && isset($_GET['tasa'])) {
         };
     </script>";
 
-    echo "<div class='form__button'>";
+    echo "<div class='form__button margin-boton'>";
         echo "<input class = 'btn-form' type='submit' name='' value='Volver a Inicio' onclick=\"window.location.href='./index.php';\">";
     echo "</div>";
 
@@ -219,13 +221,16 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
 
     // LO QUE MUESTRA POR PANTALLA
     echo "<div class = 'resultado'>";
-        echo "<h3>Datos de la Operación: </h3>";
+        echo "<h3>Datos de la Operación. </h3>";
         echo "<ul>";
             echo "<li>Capital Inicial a Invertir: $". number_format($capital, 2, ',','.') ."</li>";
             echo "<li>Plazo (Días):  $plazo </li>";
             echo "<li>Tasa Efectiva Anual (TEA):  $tasa% </li>";
             echo "<li>Intereses Generados: $" . number_format($calculo2, 2, ',','.'). "</li>";
         echo "</ul>";
+    
+        echo "<p class = 'font-s'>Cada billetera virtual genera rendimiento hasta un monto máximo de capital, verificar en cada una cual es este importe.</p>";
+    
     echo "</div>";
 
     echo "<script>
@@ -235,7 +240,7 @@ if (isset($_GET['capital1']) && isset($_GET['plazo1']) && isset($_GET['tasa1']))
         };
     </script>";
 
-    echo "<div class='form__button'>";
+    echo "<div class='form__button margin-boton'>";
         echo "<input class = 'btn-form' type='submit' name='' value='Volver a Inicio' onclick=\"window.location.href='./index.php';\">";
     echo "</div>";
     

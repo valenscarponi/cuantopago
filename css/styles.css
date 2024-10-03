@@ -86,8 +86,12 @@ li{
 }
 
 .font-s{
-    font-size: 1rem;
+    font-size: 1.3rem;
     text-align: left;
+}
+
+.tamaño{
+    text-decoration: underline;
 }
 
 /* FORMULARIO */
@@ -389,7 +393,7 @@ input[type = 'submit']:hover{
     margin: 1rem 0;
 }
 
-/* COLORES */
+/* COLORES 
 
 .verde{
     color: rgb(98, 255, 98);
@@ -404,6 +408,4 @@ input[type = 'submit']:hover{
     font-weight: 700;
     background-color: var(--blanco);
     padding: .5rem;
-
-
-}
+}*/
