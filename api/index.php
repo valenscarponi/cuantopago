@@ -6,6 +6,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
 // Incluir las funciones que vamos a exponer como API
+// y luego llama a la funcion interes
 require_once 'calculo.php';
 
 
