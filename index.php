@@ -79,7 +79,7 @@
         <div class="container__presentacion">
             <div class="container__contenido">
                 <h1 class="container__title no-margin">¿Cuánto Pago?</h1>
-                <p>Calculadora de Costo Financiero Total</p>
+                <p>Calculadora de Pan</p>
             </div>
             <div class="container__icono">
                 <a href="https://www.instagram.com/cuantopagoapp?igsh=YXBmYnFmeWs2dHhx" target="_blank"><i class="fa-brands fa-instagram" style="color: #0a1828; font-size: 2rem"></i></a>
